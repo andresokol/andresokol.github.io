@@ -1,0 +1,120 @@
+<!DOCTYPE html5>
+<html>
+<head>
+	<title></title>
+	<style>
+		body {
+			text-align: center;
+		}
+	</style>
+</head>
+<body>
+	<canvas id="graph" width="1000" height="600"></canvas>
+	
+	<script>
+		var canvas = document.getElementById('graph'),
+			context = canvas.getContext('2d'),
+			graph = [[false, true,  true, true], 
+					 [true,  false, false, true],
+					 [true, false, false, false],
+					 [true,  true, false,  false]],
+			pos = [],
+			glen = graph.length,
+			rad = 50,
+			movement = 0,
+			end = false,
+			eps = 1e-3;
+		
+		var drawPoint = function(x, y) {
+			context.beginPath();
+			context.arc(x, y, 4, 0, 2 * Math.PI, false);
+			context.fillStyle = 'black';
+			context.fill();	
+		};
+		
+		var drawLine = function(x1, y1, x2, y2) {
+			context.beginPath();
+			context.moveTo(x1, y1);
+			context.lineTo(x2, y2);
+			context.strokeStyle = 'gray';
+			context.stroke();
+		};
+		
+		var getX = function(i) {
+			return rad * Math.cos(2 * Math.PI / glen * i) + canvas.width / 2;
+		}
+		
+		var getY = function(i) {
+			return rad * Math.sin(2 * Math.PI / glen * i) + canvas.height / 2;
+		}
+		
+		var handleForces = function(p) {
+			var const1 = 1e6, const2 = 0.5, const3 = 100; forceX = 0, forceY = 0;
+			for(var i = 0; i < glen; i++)
+				if(i != p) {
+					dist = Math.sqrt((pos[i][0] - pos[p][0]) * (pos[i][0] - pos[p][0]) +
+								  (pos[i][1] - pos[p][1]) * (pos[i][1] - pos[p][1]));
+					force = const1 / dist / dist;
+					//alpha = Math.atan( / (pos[i][0] - pos[p][0]));
+					//console.log(p, i, alpha);
+					if(graph[i][p]) force -= const2 * (dist - const3);
+					forceX -= force * (pos[i][0] - pos[p][0]) / dist;
+					forceY -= force * (pos[i][1] - pos[p][1]) / dist;
+				}
+			movement += Math.abs(forceX) + Math.abs(forceY);
+			pos[p][0] += forceX;
+			pos[p][1] += forceY;
+			//console.log(p);
+		}
+		
+		var render = function() {
+			context.clearRect (0, 0, canvas.width, canvas.height);
+			for(var i = 0; i < glen; i++)
+				for(var j = i + 1; j < glen; j++)
+					if(graph[i][j]) drawLine(pos[i][0], pos[i][1], pos[j][0], pos[j][1]);
+			
+			for(var i = 0; i < glen; i++)
+				drawPoint(pos[i][0], pos[i][1]);
+		}
+		
+		var count = function() {
+			movement = 0;
+			for(var i = 0; i < glen; i++)
+				handleForces(i);
+			//console.log('ok');
+			//render();
+			end = (2 * glen * eps >= movement);
+			//console.log(end);
+		}
+		
+		// ------- ----- ------- 
+		
+		for(var i = 0; i < glen; i++) pos.push([getX(i), getY(i)]);
+				
+		//alert("Done!");
+		for(var i = 0; i < 100; i++)
+		{
+			count();
+			if (end) break;
+			console.log(i);
+		}
+		
+		var midx = 0,
+			midy = 0;
+		
+		for(var i = 0; i < glen; i++) {
+			midx += pos[i][0];
+			midy += pos[i][1];
+		}
+		
+		midx = midx / glen;
+		midy = midy / glen;
+		
+		context.translate(canvas.width / 2 - midx, canvas.height / 2 - midy);
+		
+		render();
+		
+		//alert("Done!");
+	</script>
+</body>	
+</html>
