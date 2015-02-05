@@ -1,3 +1,6 @@
+function max(a, b) { return (a > b ? a : b) };
+function min(a, b) { return (a < b ? a : b) };
+
 var canvas = document.getElementById('graph'),
 	context = canvas.getContext('2d'),
 	graph = [[false, true,  true,  true], 
@@ -10,7 +13,7 @@ var canvas = document.getElementById('graph'),
 	movement = 0,
 	const1 = 1e6,
 	const2 = 0.5,
-	const3 = 10;
+	const3 = 100;
 	eps = 1e-3;
 		
 var drawPoint = function(x, y) {
@@ -29,11 +32,11 @@ var drawLine = function(x1, y1, x2, y2) {
 };
 		
 var getX = function(i) {
-	return rad * Math.cos(2 * Math.PI / glen * i) + canvas.width / 2;
+	return rad * Math.cos(2 * Math.PI / glen * i) + canvas.width / 2 + Math.random() - 0.5;
 }
 		
 var getY = function(i) {
-	return rad * Math.sin(2 * Math.PI / glen * i) + canvas.height / 2;
+	return rad * Math.sin(2 * Math.PI / glen * i) + canvas.height / 2 + Math.random() - 0.5;
 }
 		
 var handleForces = function(p) {
@@ -72,7 +75,7 @@ var count = function() {
 var main = function() {
 	for(var i = 0; i < glen; i++) pos.push([getX(i), getY(i)]);
 	//console.log(pos);
-	for(var i = 0; i < 1000 && count(); i++);
+	for(var i = 0; i < 1000 || count(); i++) console.log(i);
 	
 	var midx = 0,
 		midy = 0;
@@ -90,6 +93,18 @@ var main = function() {
 		pos[i][1] += midy;
 	}
 	
+	var mix = canvas.width / 2,
+		maX = canvas.width / 2,
+		miy = canvas.height / 2,
+		may = canvas.height / 2;
+	
+	for(var i = 0; i < glen; i++) {
+		mix = min(mix, pos[i][0]);
+		maX = max(maX, pos[i][0]);
+		miy = min(miy, pos[i][1]);
+		may = max(may, pos[i][1]);
+	}
+	 
 	render();
 }
 

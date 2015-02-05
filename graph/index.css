@@ -1,0 +1,39 @@
+body {
+	text-align: center;
+}
+
+canvas {
+	border: 1px;
+	border-style: solid;
+}
+
+textarea {
+	height: 100%;
+	width: 80%;
+	border-radius: 5px;
+	width: 50%;
+	resize: none;
+}
+
+button {
+	padding: 10px;
+	border-radius: 10px;
+	background: #fff;
+	border-style: solid;
+	border-width: 2px;
+	border-color: #000;
+	font-family: sans-serif;
+	height: 100%;
+	width: 20%;
+	position: relative;
+	top: -93px;
+	margin-left: 20px;
+	font-weight: bold;
+	font-size: 20pt;
+}
+
+div {
+	height: 200px;
+	width: 1000px;
+	margin: auto;
+}
