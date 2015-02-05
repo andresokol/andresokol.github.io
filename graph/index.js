@@ -1,0 +1,116 @@
+var canvas = document.getElementById('graph'),
+	context = canvas.getContext('2d'),
+	graph = [[false, true,  true,  true], 
+			 [true,  false, false, true],
+			 [true,  false, false, false],
+			 [true,  true,  false, false]],
+	pos = [],
+	glen = graph.length,
+	rad = 50,
+	movement = 0,
+	const1 = 1e6,
+	const2 = 0.5,
+	const3 = 10;
+	eps = 1e-3;
+		
+var drawPoint = function(x, y) {
+	context.beginPath();
+	context.arc(x, y, 4, 0, 2 * Math.PI, false);
+	context.fillStyle = 'black';
+	context.fill();	
+};
+		
+var drawLine = function(x1, y1, x2, y2) {
+	context.beginPath();
+	context.moveTo(x1, y1);
+	context.lineTo(x2, y2);
+	context.strokeStyle = 'gray';
+	context.stroke();
+};
+		
+var getX = function(i) {
+	return rad * Math.cos(2 * Math.PI / glen * i) + canvas.width / 2;
+}
+		
+var getY = function(i) {
+	return rad * Math.sin(2 * Math.PI / glen * i) + canvas.height / 2;
+}
+		
+var handleForces = function(p) {
+	var forceX = 0, forceY = 0;
+	for(var i = 0; i < glen; i++)
+		if(i != p) {
+			dist = Math.sqrt((pos[i][0] - pos[p][0]) * (pos[i][0] - pos[p][0]) +
+						  (pos[i][1] - pos[p][1]) * (pos[i][1] - pos[p][1]));
+			force = const1 / dist / dist;
+			if(graph[i][p]) force -= const2 * (dist - const3);
+			forceX -= force * (pos[i][0] - pos[p][0]) / dist;
+			forceY -= force * (pos[i][1] - pos[p][1]) / dist;
+		}
+	movement += Math.abs(forceX) + Math.abs(forceY);
+	pos[p][0] += forceX;
+	pos[p][1] += forceY;
+}
+
+var render = function() {
+	context.clearRect (0, 0, canvas.width, canvas.height);
+	for(var i = 0; i < glen; i++)
+		for(var j = i + 1; j < glen; j++)
+			if(graph[i][j]) drawLine(pos[i][0], pos[i][1], pos[j][0], pos[j][1]);
+	
+	for(var i = 0; i < glen; i++)
+		drawPoint(pos[i][0], pos[i][1]);
+}
+
+var count = function() {
+	movement = 0;
+	for(var i = 0; i < glen; i++)
+		handleForces(i);
+	return (2 * glen * eps < movement);
+}
+
+var main = function() {
+	for(var i = 0; i < glen; i++) pos.push([getX(i), getY(i)]);
+	//console.log(pos);
+	for(var i = 0; i < 1000 && count(); i++);
+	
+	var midx = 0,
+		midy = 0;
+		
+	for(var i = 0; i < glen; i++) {
+		midx += pos[i][0];
+		midy += pos[i][1];
+	}
+		
+	midx = canvas.width  / 2 - midx / glen;
+	midy = canvas.height / 2 - midy / glen;
+	
+	for(var i = 0; i < glen; i++) {
+		pos[i][0] += midx;
+		pos[i][1] += midy;
+	}
+	
+	render();
+}
+
+var start = function() {
+	var input = document.getElementById("input").value;
+	input = input.split('\n');
+	glen = parseInt(input[0]);
+	
+	graph = new Array(glen);
+	for(var i = 0; i < glen; i++) {
+		graph[i] = new Array(glen);
+		for(var j = 0; j < glen; j++) graph[i][j] = false;
+    }
+	
+	for(var i = 1; i < input.length; i++) {
+		if(input[i] == "") break;
+		var x = parseInt(input[i].split(" ")[0]),
+			y = parseInt(input[i].split(" ")[1]);
+		graph[x - 1][y - 1] = true;
+		graph[y - 1][x - 1] = true;
+	}
+	
+	main();
+}
