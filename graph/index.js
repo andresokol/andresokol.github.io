@@ -108,7 +108,7 @@ var draw = function() {
 }
 
 var myConsole = function() {
-	console.log('sssss');
+	// 
 }
 
 var main = function() {
