@@ -72,14 +72,12 @@ var count = function() {
 	return (2 * glen * eps < movement);
 }
 
-var main = function() {
-	for(var i = 0; i < glen; i++) pos.push([getX(i), getY(i)]);
-	//console.log(pos);
-	for(var i = 0; i < 1000 || count(); i++) console.log(i);
-	
+var draw = function() {
 	var midx = 0,
 		midy = 0;
-		
+	
+	console.log('oi');
+	
 	for(var i = 0; i < glen; i++) {
 		midx += pos[i][0];
 		midy += pos[i][1];
@@ -106,6 +104,13 @@ var main = function() {
 	}
 	 
 	render();
+	return count();
+}
+
+var main = function() {
+	for(var i = 0; i < glen; i++) pos.push([getX(i), getY(i)]);
+	//console.log(pos);
+	for(var i = 0; i < 1000 || draw(); i++) console.log(i);
 }
 
 var start = function() {
