@@ -14,7 +14,8 @@ var canvas = document.getElementById('graph'),
 	const1 = 1e6,
 	const2 = 0.5,
 	const3 = 100;
-	eps = 1e-3;
+	eps = 1e-3,
+	t = true;
 		
 var drawPoint = function(x, y) {
 	context.beginPath();
@@ -108,13 +109,13 @@ var draw = function() {
 }
 
 var myConsole = function() {
-	// 
+	t = draw();
 }
 
 var main = function() {
 	for(var i = 0; i < glen; i++) pos.push([getX(i), getY(i)]);
 
-	for(var i = 0; i < 100 || draw(); i++) window.setTimeout(myConsole, 500);
+	for(var i = 0; i < 100 || t; i++) window.setTimeout(myConsole, 500);
 }
 
 var start = function() {
