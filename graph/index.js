@@ -109,8 +109,9 @@ var draw = function() {
 
 var main = function() {
 	for(var i = 0; i < glen; i++) pos.push([getX(i), getY(i)]);
-
-	window.setInterval(draw, 500);
+	
+	render();
+	window.setInterval(draw, 250);
 	//for(var i = 0; i < 100 || t; i++) window.setTimeout(myConsole, 500);
 }
 
