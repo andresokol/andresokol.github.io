@@ -14,8 +14,7 @@ var canvas = document.getElementById('graph'),
 	const1 = 1e6,
 	const2 = 0.5,
 	const3 = 100;
-	eps = 1e-3,
-	t = true;
+	eps = 1e-3;
 		
 var drawPoint = function(x, y) {
 	context.beginPath();
@@ -106,10 +105,6 @@ var draw = function() {
 	 
 	render();
 	return count();
-}
-
-var myConsole = function() {
-	t = draw();
 }
 
 var main = function() {
