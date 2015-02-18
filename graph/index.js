@@ -115,7 +115,8 @@ var myConsole = function() {
 var main = function() {
 	for(var i = 0; i < glen; i++) pos.push([getX(i), getY(i)]);
 
-	for(var i = 0; i < 100 || t; i++) window.setTimeout(myConsole, 500);
+	window.setInterval(draw, 1000);
+	//for(var i = 0; i < 100 || t; i++) window.setTimeout(myConsole, 500);
 }
 
 var start = function() {
