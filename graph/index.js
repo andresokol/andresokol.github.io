@@ -14,7 +14,8 @@ var canvas = document.getElementById('graph'),
 	const1 = 1e6,
 	const2 = 0.5,
 	const3 = 100;
-	eps = 1e-3;
+	eps = 1e-3,
+	fps = 20;
 		
 var drawPoint = function(x, y) {
 	context.beginPath();
@@ -111,7 +112,7 @@ var main = function() {
 	for(var i = 0; i < glen; i++) pos.push([getX(i), getY(i)]);
 	
 	render();
-	window.setInterval(draw, 250);
+	window.setInterval(draw, 1000 / fps);
 	//for(var i = 0; i < 100 || t; i++) window.setTimeout(myConsole, 500);
 }
 
