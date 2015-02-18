@@ -110,7 +110,7 @@ var draw = function() {
 var main = function() {
 	for(var i = 0; i < glen; i++) pos.push([getX(i), getY(i)]);
 	//console.log(pos);
-	for(var i = 0; i < 1000 || draw(); i++) console.log(i);
+	for(var i = 0; i < 1000 || draw(); i++) window.setTimeout(console.log, 500, i);
 }
 
 var start = function() {
