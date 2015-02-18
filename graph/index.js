@@ -76,7 +76,9 @@ var draw = function() {
 	var midx = 0,
 		midy = 0;
 	
-	console.log('oi');
+	console.log(count());
+	
+	render();
 	
 	for(var i = 0; i < glen; i++) {
 		midx += pos[i][0];
@@ -103,8 +105,6 @@ var draw = function() {
 		may = max(may, pos[i][1]);
 	}
 	 
-	render();
-	return count();
 }
 
 var main = function() {
