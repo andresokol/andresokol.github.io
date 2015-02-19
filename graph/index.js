@@ -105,12 +105,12 @@ var draw = function() {
 	}
 	
 	if (maX > canvas.width || mix < 0 || may > canvas.height || miy < 0) {
-		const3 *= 0.7;
-		const1 *= 0.7;
+		const3 *= 0.998;
+		const1 *= 0.998;
 		//console.log();
-	} else if (maX < canvas.width * 3 / 5 || mix > canvas.width * 2 / 5 || may < canvas.height * 3 / 5 || miy > canvas.height * 3 / 5) {
-		const3 /= 0.9;
-		const1 /= 0.9
+	} else if ((maX < canvas.width * 4 / 5 || mix > canvas.width * 1 / 5) && (may < canvas.height * 4 / 5 || miy > canvas.height * 1 / 5)) {
+		const3 /= 0.999;
+		const1 /= 0.999;
 		console.log(const3, maX, mix);
 	}
 	render();
