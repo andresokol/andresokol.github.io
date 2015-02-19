@@ -79,13 +79,25 @@ var draw = function() {
 	
 	count();
 	
-	for(var i = 0; i < glen; i++) {
+	/*for(var i = 0; i < glen; i++) {
 		midx += pos[i][0];
 		midy += pos[i][1];
+	}*/
+	
+	var mix = canvas.width / 2,
+		maX = canvas.width / 2,
+		miy = canvas.height / 2,
+		may = canvas.height / 2;
+	
+	for(var i = 0; i < glen; i++) {
+		mix = min(mix, pos[i][0]);
+		maX = max(maX, pos[i][0]);
+		miy = min(miy, pos[i][1]);
+		may = max(may, pos[i][1]);
 	}
 		
-	midx = canvas.width  / 2 - midx / glen;
-	midy = canvas.height / 2 - midy / glen;
+	midx = canvas.width  / 2 - (maX + mix) / 2;
+	midy = canvas.height / 2 - (may + miy) / 2;
 	
 	for(var i = 0; i < glen; i++) {
 		pos[i][0] += midx;
