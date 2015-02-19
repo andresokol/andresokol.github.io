@@ -84,8 +84,8 @@ var draw = function() {
 		midy += pos[i][1];
 	}
 		
-	midx = canvas.width  / 2 - midx / glen;
-	midy = canvas.height / 2 - midy / glen;
+	midx = canvas.width  / 2 - midx;
+	midy = canvas.height / 2 - midy;
 	
 	for(var i = 0; i < glen; i++) {
 		pos[i][0] += midx;
@@ -105,8 +105,8 @@ var draw = function() {
 	}
 	
 	if (maX > canvas.width || mix < 0 || may > canvas.height || miy < 0) {
-		const3 *= 0.998;
-		const1 *= 0.998;
+		const3 *= 0.995;
+		const1 *= 0.995;
 		//console.log();
 	} else if ((maX < canvas.width * 4 / 5 || mix > canvas.width * 1 / 5) && (may < canvas.height * 4 / 5 || miy > canvas.height * 1 / 5)) {
 		const3 /= 0.999;
