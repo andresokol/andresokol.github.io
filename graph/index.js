@@ -106,7 +106,7 @@ var draw = function() {
 	
 	if (maX > canvas.width || mix < 0 || may > canvas.height || miy < 0) {
 		const3 *= 0.7;
-		console.log(-0.7);
+		//console.log();
 	} else if (maX < canvas.width * 3 / 5 || mix > canvas.width * 2 / 5 || may < canvas.height * 3 / 5 || miy > canvas.height * 3 / 5) {
 		const3 /= 0.9;
 		console.log(const3, maX, mix);
