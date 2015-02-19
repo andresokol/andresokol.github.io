@@ -84,8 +84,8 @@ var draw = function() {
 		midy += pos[i][1];
 	}
 		
-	midx = canvas.width  / 2 - midx;
-	midy = canvas.height / 2 - midy;
+	midx = canvas.width  / 2 - midx / glen;
+	midy = canvas.height / 2 - midy / glen;
 	
 	for(var i = 0; i < glen; i++) {
 		pos[i][0] += midx;
