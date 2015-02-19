@@ -47,7 +47,7 @@ var handleForces = function(p) {
 			dist = Math.sqrt((pos[i][0] - pos[p][0]) * (pos[i][0] - pos[p][0]) +
 						  (pos[i][1] - pos[p][1]) * (pos[i][1] - pos[p][1]));
 			force = const1 / dist / dist;
-			if(graph[i][p]) force -= const2 * (dist - const3);
+			if(graph[i][p]) force -= const2 * Math.abs(dist - const3);
 			forceX -= force * (pos[i][0] - pos[p][0]) / dist;
 			forceY -= force * (pos[i][1] - pos[p][1]) / dist;
 		}
