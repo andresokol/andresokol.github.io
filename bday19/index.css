@@ -5,6 +5,10 @@ body {
     color: white;
 }
 
+a {
+    color:white;
+}
+
 hr {
     color:white;
     width:90%;
@@ -21,20 +25,23 @@ div.top_img {
     background-size: cover;
 }
 
+@keyframes arrow {
+    from {bottom: 0;}
+    50% {bottom: 30px;}
+    to {bottom: 0;}
+}
+
 div.top_img > .arrow_container {
     position: absolute;
     bottom: 0;
     height: 128px;
     width: 100%;
     text-align: center;
+    animation: arrow 2s infinite ease-in-out;
 }
 
 div.top_img > .arrow_container > img {
     width: 128px;
-    /*margin-left: auto;
-    margin-right: auto;
-    position: relative;
-    bottom: 0;*/
 }
 
 div.top_img > .slogan {
@@ -42,7 +49,10 @@ div.top_img > .slogan {
     top: 60%;
     text-align: center;
     font-size: 50pt;
+    font-weight: bold;
     color: white;
+    width: auto;
+    background-color: rgba(32, 32, 32, 0.8);
 }
 
 div.cake {
@@ -86,11 +96,11 @@ div.timer {
 }
 
 div.timer > div {
-    padding: 10px 50px 10px 50px;
+    padding: 10px 50px 25px 50px;
 }
 
 div.timer > div.semicolon {
-    font-size: 120px;
+    font-size: 100px;
     padding:0;
     font-weight: bolder;
 }
@@ -113,6 +123,7 @@ div.timer > div > h1.key {
 div.adress {
     width: 100%;
     text-align: center;
+    padding-top: 20px;
 }
 
 p.dot {

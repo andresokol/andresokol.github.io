@@ -45,7 +45,7 @@
         </div>
     </div>
     <div class="adress">
-        <h1>Куда ехать: <a>Открытое шоссе 3к4, кв. 39, код 37К485</a></h1>
+        <h1>Куда ехать: <a href="https://yandex.ru/maps/-/CVH~rS8h">Открытое шоссе 3к4</a>, кв. 39, код 37К485</h1>
         <h1>Метро:  <p class="dot"></p>Бульвар Рокоссовского</h1>
     </div>
 
@@ -59,15 +59,32 @@
     <script>
         var timer_tick = function () {
             var seconds_now = new Date().getTime() / 1000;
+            
             var seconds_left = parseInt(1462114800 - seconds_now);
-            document.getElementById("secs").innerHTML = seconds_left % 60;
-            seconds_left = parseInt(seconds_left / 60);
-            document.getElementById("mins").innerHTML = seconds_left % 60;
-            seconds_left = parseInt(seconds_left / 60);
-            document.getElementById("hours").innerHTML = seconds_left % 24;
-            seconds_left = parseInt(seconds_left / 24);
-            document.getElementById("days").innerHTML = seconds_left;
+            if (String(seconds_left % 60).length == 1) {
+                document.getElementById("secs").innerHTML = "0" + String(seconds_left % 60);
+            } else {
+                document.getElementById("secs").innerHTML = seconds_left % 60;
+            }
+            
+            var minutes_left = parseInt(seconds_left / 60);
+            if (String(minutes_left % 60).length == 1) {
+                document.getElementById("mins").innerHTML = "0" + String(minutes_left % 60);
+            } else {
+                document.getElementById("mins").innerHTML = minutes_left % 60;
+            }
+            
+            var hours_left = parseInt(minutes_left / 60);
+            if (String(hours_left % 24).length == 1) {
+                document.getElementById("hours").innerHTML = "0" + String(hours_left % 24);
+            } else {
+                document.getElementById("hours").innerHTML = hours_left % 24;
+            }
+            
+            var days_left = parseInt(hours_left / 24);
+            document.getElementById("days").innerHTML = days_left;
         };
+        
         window.setInterval(timer_tick, 1000);
     </script>
 </body>
