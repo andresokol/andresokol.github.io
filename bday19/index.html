@@ -24,22 +24,22 @@
     <div class="timer-container">
         <div class="timer">
             <div class="td">
-                <h1 class="value">44</h1>
+                <h1 class="value" id='days'>44</h1>
                 <h1 class="key">дней</h1>
             </div>
             <div class="semicolon">:</div>
             <div class="td">
-                <h1 class="value">44</h1>
+                <h1 class="value" id="hours">44</h1>
                 <h1 class="key">часов</h1>
             </div>
             <div class="semicolon">:</div>
             <div class="td">
-                <h1 class="value">44</h1>
+                <h1 class="value" id="mins">44</h1>
                 <h1 class="key">минут</h1>
             </div>
             <div class="semicolon">:</div>
             <div class="td">
-                <h1 class="value">44</h1>
+                <h1 class="value" id="secs">44</h1>
                 <h1 class="key">секунд</h1>
             </div>
         </div>
@@ -48,10 +48,28 @@
         <h1>Куда ехать: <a>Открытое шоссе 3к4, кв. 39, код 37К485</a></h1>
         <h1>Метро:  <p class="dot"></p>Бульвар Рокоссовского</h1>
     </div>
-    
+
+    <hr>
+
     <div class="instructions">
         <h1>Подробная инструкция</h1>
         <h3>(для неуверенных в себе)</h3>
     </div>
+
+    <script>
+        var timer_tick = function () {
+            var seconds_now = new Date().getTime() / 1000;
+            var seconds_left = parseInt(1462114800 - seconds_now);
+            document.getElementById("secs").innerHTML = seconds_left % 60;
+            seconds_left = parseInt(seconds_left / 60);
+            document.getElementById("mins").innerHTML = seconds_left % 60;
+            seconds_left = parseInt(seconds_left / 60);
+            document.getElementById("hours").innerHTML = seconds_left % 24;
+            seconds_left = parseInt(seconds_left / 24);
+            document.getElementById("days").innerHTML = seconds_left;
+        };
+        window.setInterval(timer_tick, 1000);
+    </script>
 </body>
+
 </html>
