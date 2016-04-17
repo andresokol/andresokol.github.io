@@ -2,6 +2,7 @@ body {
     margin: 0;
     background-color: #111;
     font-family: 'Open Sans', sans-serif;
+    color: white;
 }
 
 div.top_img {
@@ -60,4 +61,60 @@ div.announce > h1.time {
     font-weight: 800;
     font-size: 80pt;
     margin: 40px 0px 40px 0px;
+}
+
+div.timer-container {
+    text-align: center;
+    padding-top: 50px;
+    width: 100%;
+}
+
+div.timer {
+    display:inline-flex;
+    color: white;
+    background-color: black;
+    border-radius: 10px;
+}
+
+div.timer > div {
+    padding: 10px 50px 10px 50px;
+}
+
+div.timer > div.semicolon {
+    font-size: 120px;
+    padding:0;
+    font-weight: bolder;
+}
+
+
+div.timer > div > h1 {
+    padding: 0;
+    margin: 0;
+}
+
+div.timer > div > h1.value {
+    font-size: 70pt;
+}
+
+
+div.timer > div > h1.key {
+    font-weight: normal;
+}
+
+div.adress {
+    width: 100%;
+    text-align: center;
+}
+
+p.dot {
+    background-color: red;
+    display: inline-flex;
+    height: 25px;
+    width:25px;
+    border-radius: 50px;
+    margin: 0 5px 0 5px;
+}
+
+div.instructions {
+    text-align: center;
 }
