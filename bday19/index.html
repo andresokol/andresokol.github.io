@@ -1,20 +1,27 @@
+<!DOCTYPE html>
 <html>
 
 <head>
-    <title></title>
+    <title>Приглашение!</title>
     <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,700,300,600,800&subset=latin,cyrillic,cyrillic-ext' rel='stylesheet' type='text/css'>
     <link rel="stylesheet" href="index.css">
 </head>
 
 <body>
     <div class="top_img">
-        <div class="slogan">Два придурка снова в деле!</div>
+        <div class="slogan">
+            <div class="slogan_cnt">
+                <p>Два придурка</p>
+                <p>снова в деле!</p>
+            </div>
+        </div>
         <div class="arrow_container">
             <img src="arrow_down.png">
         </div>
     </div>
     <div class="cake">
-        <img src="http://hydra-media.cursecdn.com/minecraft.gamepedia.com/f/f0/Cake.png">
+        <img src="cake.png">
+        <img src="cake.png">
     </div>
     <div class="announce">
         <h1>Пятое юбилейное</h1>
@@ -49,6 +56,7 @@
     <div class="adress">
         <h1>Куда ехать: <a href="https://yandex.ru/maps/-/CVH~rS8h">Открытое шоссе 3к4</a>, кв. 39, код 37К485</h1>
         <h1>Метро:  <p class="dot"></p>Бульвар Рокоссовского</h1>
+        <h1>Хочешь ночевать? Возьми спальник!</h1>
     </div>
 
     <hr>
@@ -56,37 +64,44 @@
     <div class="instructions">
         <h1>Подробная инструкция</h1>
         <h3>(для неуверенных в себе)</h3>
+        <ol>
+            <li><b><u>Последний</u></b> вагон из центра</li>
+            <li>После прохода через турникеты подземный переход поворачивает направо - по нему прямо до упора</li>
+            <li>Поднялись наверх - продолжаем идти прямо</li>
+            <li>Сворачиваем в третий поворот во двор (направо)</li>
+            <li>Слева окажется нужный дом - 2ой подъезд, 5ый этаж</li>
+        </ol>
     </div>
 
     <script>
         var timer_tick = function () {
             var seconds_now = new Date().getTime() / 1000;
-            
+
             var seconds_left = parseInt(1462114800 - seconds_now);
             if (String(seconds_left % 60).length == 1) {
                 document.getElementById("secs").innerHTML = "0" + String(seconds_left % 60);
             } else {
                 document.getElementById("secs").innerHTML = seconds_left % 60;
             }
-            
+
             var minutes_left = parseInt(seconds_left / 60);
             if (String(minutes_left % 60).length == 1) {
                 document.getElementById("mins").innerHTML = "0" + String(minutes_left % 60);
             } else {
                 document.getElementById("mins").innerHTML = minutes_left % 60;
             }
-            
+
             var hours_left = parseInt(minutes_left / 60);
             if (String(hours_left % 24).length == 1) {
                 document.getElementById("hours").innerHTML = "0" + String(hours_left % 24);
             } else {
                 document.getElementById("hours").innerHTML = hours_left % 24;
             }
-            
+
             var days_left = parseInt(hours_left / 24);
             document.getElementById("days").innerHTML = days_left;
         };
-        
+
         window.setInterval(timer_tick, 1000);
     </script>
 </body>

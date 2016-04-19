@@ -6,12 +6,12 @@ body {
 }
 
 a {
-    color:white;
+    color: white;
 }
 
 hr {
-    color:white;
-    width:90%;
+    color: white;
+    width: 90%;
     border-width: 1px;
     margin-top: 50px;
     margin-bottom: 50px;
@@ -20,16 +20,22 @@ hr {
 
 div.top_img {
     width: 100%;
-    height: 100%;
+    height: 100vh;
     background-image: url(main-2%20-%20Copy.jpg);
     background-position: center center;
     background-size: cover;
 }
 
 @keyframes arrow {
-    from {bottom: 0;}
-    50% {bottom: 30px;}
-    to {bottom: 0;}
+    from {
+        bottom: 0;
+    }
+    50% {
+        bottom: 30px;
+    }
+    to {
+        bottom: 0;
+    }
 }
 
 div.top_img > .arrow_container {
@@ -46,14 +52,36 @@ div.top_img > .arrow_container > img {
 }
 
 div.top_img > .slogan {
-    position: relative;
-    top: 60%;
-    text-align: center;
-    font-size: 50pt;
-    font-weight: bold;
+    position: absolute;
+    top: 0%;
+    width: 100%;
+    height: 100vh;
+    font-size: 40pt;
+    font-weight: 400;
     color: white;
-    width: auto;
-    background-color: rgba(32, 32, 32, 0.8);
+}
+
+div.top_img > .slogan > .slogan_cnt {
+    position: absolute;
+    right: 150px;
+    top: 10px;
+}
+
+div.top_img > .slogan > .slogan_cnt > p {
+    margin: 0;
+    width: inherit;
+    background-color: rgba(32, 32, 32, 0.85);
+    padding: 5px 20px;
+    border-color: black;
+    border-style: none;
+    border-width: thin;
+    border-collapse: collapse;
+}
+
+div.top_img > .slogan > .slogan_cnt > p:nth-of-type(2) {
+    position: relative;
+    left: 2em;
+    padding: 5px 20px;
 }
 
 div.cake {
@@ -62,7 +90,7 @@ div.cake {
     font-size: 50pt;
     color: white;
     padding-top: 50px;
-    padding-bottom: 50px;
+    padding-bottom: 30px;
 }
 
 div.announce {
@@ -90,7 +118,7 @@ div.timer-container {
 }
 
 div.timer {
-    display:inline-flex;
+    display: inline-flex;
     color: white;
     background-color: black;
     border-radius: 10px;
@@ -102,10 +130,9 @@ div.timer > div {
 
 div.timer > div.semicolon {
     font-size: 100px;
-    padding:0;
+    padding: 0;
     font-weight: bolder;
 }
-
 
 div.timer > div > h1 {
     padding: 0;
@@ -116,9 +143,8 @@ div.timer > div > h1.value {
     font-size: 70pt;
 }
 
-
 div.timer > div > h1.key {
-    font-weight: normal;
+    font-weight: 300;
 }
 
 div.adress {
@@ -127,15 +153,30 @@ div.adress {
     padding-top: 20px;
 }
 
+div.adress > h1 {
+    font-weight: 400;
+}
+
 p.dot {
     background-color: red;
     display: inline-flex;
     height: 25px;
-    width:25px;
+    width: 25px;
     border-radius: 50px;
     margin: 0 5px 0 5px;
 }
 
 div.instructions {
     text-align: center;
+}
+
+ol {
+    margin: auto;
+    font-size: 15pt;
+    max-width: 600px;
+    font-weight: 300;
+}
+
+ol > li {
+    margin-bottom: 10px;
 }
