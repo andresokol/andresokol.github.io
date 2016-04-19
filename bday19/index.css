@@ -58,11 +58,11 @@ div.top_img > .slogan {
 
 div.cake {
     width: 100%;
-    height: 50%;
     text-align: center;
-    vertical-align: center;
     font-size: 50pt;
     color: white;
+    padding-top: 50px;
+    padding-bottom: 50px;
 }
 
 div.announce {
