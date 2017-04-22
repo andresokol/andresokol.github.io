@@ -1,0 +1,59 @@
+body {
+    margin: 0;
+    background-color: #ccc;
+    font-family: 'PT Sans', sans-serif;
+}
+
+.wrapper {
+    width: 40%;
+    margin: 0px auto;
+    padding: 20px;
+    background-color: #fff;
+}
+
+.input_wrapper {
+    width: 100%;
+}
+
+.input_area {
+    /*min-height: 40px;*/
+    width: 100%;
+    padding: 5px 5px 0px 5px;
+    border: 0px;
+    border-bottom: 2px solid #fff;
+    font-family: 'PT Sans', sans-serif;
+    font-size: 18pt;
+    resize: none;
+    text-align: center;
+    margin-bottom: 10px;
+}
+
+.input_area:focus {
+    border-bottom: 2px solid #999;
+}
+
+.wrapper > div > button {
+    background: red;
+    color: #fff;
+    width: 100%;
+    margin: 0px;
+    border: 0px;
+    padding: 10px;
+    font-family: 'PT Sans', sans-serif;
+    font-size: 18pt;
+    border-radius: 20px;
+}
+
+hr {
+    border: 5px dashed #aaa;
+    margin: 20px 0px;
+}
+
+.item_list {
+}
+
+.item {
+    font-size: 18pt;
+    padding: 20px 5px;
+    border-top: 1px solid #555;
+}
