@@ -1,0 +1,184 @@
+body {
+    margin: 0;
+    background-color: rgb(250, 174, 120);
+    font-family: 'Open Sans', sans-serif;
+    color: rgb(182, 90, 39);
+    color: rgb(108, 51, 26);
+}
+
+a {
+    color: rgb(108, 51, 26);
+    font-weight: bold;
+}
+
+hr {
+    color: rgb(108, 51, 26);
+    width: 90%;
+    border-width: 2px;
+    margin-top: 50px;
+    margin-bottom: 50px;
+    border-style: solid;
+}
+
+div.top_img {
+    width: 100%;
+    height: 100vh;
+    background-image: url(main-2%20-%20Copy.jpg);
+    background-position: center center;
+    background-size: cover;
+}
+
+@keyframes arrow {
+    from {
+        bottom: 0;
+    }
+    50% {
+        bottom: 30px;
+    }
+    to {
+        bottom: 0;
+    }
+}
+
+div.top_img > .arrow_container {
+    position: absolute;
+    bottom: 0;
+    height: 192px;
+    width: 100%;
+    text-align: center;
+    animation: arrow 2s infinite ease-in-out;
+}
+
+div.top_img > .arrow_container > img {
+    width: 256px;
+}
+
+/*div.top_img > .slogan {
+    position: absolute;
+    top: 0%;
+    width: 100%;
+    height: 100vh;
+    font-size: 40pt;
+    font-weight: 400;
+}*/
+
+div.top_img > .slogan {
+    position: absolute;
+    right: 5vw;
+    top: 5vh;
+    border-radius: 50%;
+    width: 25vw;
+    background-color: rgba(250, 174, 120, 1);
+}
+
+/*div.top_img > .slogan > .slogan_cnt > p {
+    margin: 0;
+    width: inherit;
+    background-color: rgba(32, 32, 32, 0.85);
+    padding: 5px 20px;
+    border-color: black;
+    border-style: none;
+    border-width: thin;
+    border-collapse: collapse;
+}
+
+div.top_img > .slogan > .slogan_cnt > p:nth-of-type(2) {
+    position: relative;
+    left: 2em;
+    padding: 5px 20px;
+}*/
+
+div.cake {
+    width: 100%;
+    text-align: center;
+    font-size: 50pt;
+    padding-top: 50px;
+    padding-bottom: 30px;
+}
+
+div.announce {
+    width: 100%;
+    text-align: center;
+}
+
+div.announce > h1 {
+    font-size: 40pt;
+    font-weight: 400;
+    margin: 0;
+}
+
+div.announce > h1.time {
+    font-weight: 800;
+    font-size: 80pt;
+    margin: 40px 0px 40px 0px;
+}
+
+div.timer-container {
+    text-align: center;
+    padding-top: 50px;
+    width: 100%;
+}
+
+div.timer {
+    display: inline-flex;
+    background-color: rgb(108, 51, 26);
+    color: #FEE7A3;
+    border-radius: 10px;
+}
+
+div.timer > div {
+    padding: 10px 50px 25px 50px;
+}
+
+div.timer > div.semicolon {
+    font-size: 100px;
+    padding: 0;
+    font-weight: bolder;
+}
+
+div.timer > div > h1 {
+    padding: 0;
+    margin: 0;
+}
+
+div.timer > div > h1.value {
+    font-size: 70pt;
+}
+
+div.timer > div > h1.key {
+    font-weight: 300;
+}
+
+div.adress {
+    width: 100%;
+    text-align: center;
+    padding-top: 20px;
+}
+
+div.adress > h1 {
+    font-weight: 400;
+}
+
+p.dot {
+    background-color: red;
+    display: inline-flex;
+    height: 25px;
+    width: 25px;
+    border-radius: 50px;
+    margin: 0 5px 0 5px;
+}
+
+div.instructions {
+    text-align: center;
+}
+
+ol {
+    margin: auto;
+    font-size: 15pt;
+    max-width: 600px;
+    font-weight: 300;
+}
+
+ol > li {
+    margin-bottom: 10px;
+}
