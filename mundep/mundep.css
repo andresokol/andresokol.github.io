@@ -1,0 +1,37 @@
+body {
+    background-color: #eee;
+    color: #333;
+    font-family: 'PT Sans', sans-serif;
+}
+
+.mundep_map {
+    width: 100%;
+    background-image: url('https://pp.userapi.com/c837335/v837335801/35ebd/zy3K2KSkdTs.jpg');
+    background-position: center;
+    background-size: cover;
+    height: 70vh;
+}
+
+.district_cnt {
+    margin-right: 5%;
+    margin-left: 5%;
+}
+
+.candidate_cnt {
+    padding-top: 50px;
+    padding-bottom: 50px;
+}
+
+.candidate_cnt > img {
+    width: 100%;
+    border-radius: 50%;
+}
+
+.candidate_cnt > h1 {
+    padding-top: 10px;
+    font-weight: bold;
+}
+
+.candidate_cnt > p {
+    font-family: 'PT Serif', serif;
+}
