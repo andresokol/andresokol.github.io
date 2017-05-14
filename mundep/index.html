@@ -6,6 +6,7 @@
     <link href="https://fonts.googleapis.com/css?family=PT+Sans+Caption|PT+Sans:400,700|PT+Serif&amp;subset=cyrillic" rel="stylesheet">
     <link rel="stylesheet" href="amazium.css">
     <link rel="stylesheet" href="mundep.css">
+    <script src="districts.js"></script>
     <style>
     #map {
         height: 80vh;
@@ -15,7 +16,18 @@
 <body>
     <div id="map">
     </div>
-    <h1 class="district_name">I округ</h1>
+    <div class="row district_btn_cnt">
+        <div class="district_btn grid-2 colored_3">
+            <a href="#d3"><h1>Округ III</h1></a>
+        </div>
+        <div class="district_btn grid-2 grid--offset-3 colored_2">
+            <a href="#d2"><h1>Округ II</h1></a>
+        </div>
+        <div class="district_btn grid-2 grid--offset-3 colored_1">
+            <a href="#d1"><h1>Округ I</h1></a>
+        </div>
+    </div>
+    <h1 class="district_name" id="d1">I округ</h1>
     <ol class="district_cnt columns columns-4-desktop">
         <li class="candidate_cnt column">
             <img src="https://pbs.twimg.com/profile_images/839137907302625280/cyKloN9m.jpg">
@@ -79,7 +91,9 @@
         </li>
     </ol>
 
-    <h1 class="district_name">II округ</h1>
+    <hr class="district_sep">
+
+    <h1 class="district_name" id="d2">II округ</h1>
     <ol class="district_cnt columns columns-4-desktop">
         <li class="candidate_cnt column">
             <img src="https://pbs.twimg.com/profile_images/839137907302625280/cyKloN9m.jpg">
@@ -142,19 +156,109 @@
             </p>
         </li>
     </ol>
+    
+    <hr class="district_sep">
+
+    <h1 class="district_name" id="d3">III округ</h1>
+    <ol class="district_cnt columns columns-4-desktop">
+        <li class="candidate_cnt column">
+            <img src="https://pbs.twimg.com/profile_images/839137907302625280/cyKloN9m.jpg">
+            <h1>Андрей Соколов</h1>
+            <p>
+                Пробыв на третьем десятке уже три дня и пообвыкшись с этим, я
+                готов поделиться некоторыми своими планами на ближайшее будущее.
+            </p>
+            <p>
+                А именно следующими - я собираюсь избираться в муниципальные
+                депутаты по Южному Бутово на выборах 10 сентября. По этому
+                поводу я еще буду писать огромное количество постов с просьбами
+                поволонтерить или пожертвовать денежку и, наверное, всех к концу
+                лета достану.
+            </p>
+        </li>
+        <li class="candidate_cnt column">
+            <img src="https://pbs.twimg.com/profile_images/839137907302625280/cyKloN9m.jpg">
+            <h1>Андрей Соколов</h1>
+            <p>
+                Пробыв на третьем десятке уже три дня и пообвыкшись с этим, я
+                готов поделиться некоторыми своими планами на ближайшее будущее.
+            </p>
+            <p>
+                А именно следующими - я собираюсь избираться в муниципальные
+                депутаты по Южному Бутово на выборах 10 сентября. По этому
+                поводу я еще буду писать огромное количество постов с просьбами
+                поволонтерить или пожертвовать денежку и, наверное, всех к концу
+                лета достану.
+            </p>
+        </li>
+        <li class="candidate_cnt column">
+            <img src="https://pbs.twimg.com/profile_images/839137907302625280/cyKloN9m.jpg">
+            <h1>Андрей Соколов</h1>
+            <p>
+                Пробыв на третьем десятке уже три дня и пообвыкшись с этим, я
+                готов поделиться некоторыми своими планами на ближайшее будущее.
+            </p>
+            <p>
+                А именно следующими - я собираюсь избираться в муниципальные
+                депутаты по Южному Бутово на выборах 10 сентября. По этому
+                поводу я еще буду писать огромное количество постов с просьбами
+                поволонтерить или пожертвовать денежку и, наверное, всех к концу
+                лета достану.
+            </p>
+        </li>
+        <li class="candidate_cnt column">
+            <img src="https://pbs.twimg.com/profile_images/839137907302625280/cyKloN9m.jpg">
+            <h1>Андрей Соколов</h1>
+            <p>
+                Пробыв на третьем десятке уже три дня и пообвыкшись с этим, я
+                готов поделиться некоторыми своими планами на ближайшее будущее.
+            </p>
+            <p>
+                А именно следующими - я собираюсь избираться в муниципальные
+                депутаты по Южному Бутово на выборах 10 сентября. По этому
+                поводу я еще буду писать огромное количество постов с просьбами
+                поволонтерить или пожертвовать денежку и, наверное, всех к концу
+                лета достану.
+            </p>
+        </li>
+    </ol>
+
 
     <script>
       var map;
       function initMap() {
         map = new google.maps.Map(document.getElementById('map'), {
-          center: {lat: 55.541311, lng: 37.533436},
-          zoom: 12
-        });
-        var ctaLayer = new google.maps.KmlLayer({
-            url: 'http://andresokol.github.io/mundep/districts.kml',
-            map: map
+          center: {lat: 55.529782, lng: 37.553293},
+          zoom: 13
         });
 
+        var d1 = new google.maps.Polygon({
+          paths: district_1,
+          strokeColor: '#306F78',
+          strokeOpacity: 0.8,
+          strokeWeight: 2,
+          fillColor: '#306F78',
+          fillOpacity: 0.35
+        });
+        d1.setMap(map);
+        var d2 = new google.maps.Polygon({
+          paths: district_2,
+          strokeColor: '#B4CA5D',
+          strokeOpacity: 0.8,
+          strokeWeight: 2,
+          fillColor: '#B4CA5D',
+          fillOpacity: 0.35
+        });
+        d2.setMap(map);
+        var d3 = new google.maps.Polygon({
+          paths: district_3,
+          strokeColor: '#E58753',
+          strokeOpacity: 0.8,
+          strokeWeight: 2,
+              fillColor: '#E58753',
+          fillOpacity: 0.35
+        });
+        d3.setMap(map);
       }
 
     </script>

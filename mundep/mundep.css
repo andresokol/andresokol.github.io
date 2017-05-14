@@ -1,5 +1,5 @@
 body {
-    background-color: #eee;
+    background-color: #f5f5f5;
     color: #333;
     font-family: 'PT Sans', sans-serif;
 }
@@ -34,4 +34,50 @@ body {
 
 .candidate_cnt > p {
     font-family: 'PT Serif', serif;
+}
+
+.colored_1 {
+    background-color: #306F78;
+    border-bottom: 5px solid #204F58;
+}
+
+.colored_2 {
+    background-color: #B4CA5D;
+    border-bottom: 5px solid #849A3D;
+}
+
+.colored_3 {
+    background-color: #E58753;
+    border-bottom: 5px solid #956743;
+}
+
+.district_btn_cnt {
+    padding-top: 20px;
+}
+
+.district_btn {
+    text-align: center;
+    color: #eee;
+    font-weight: bold;
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
+
+.district_btn > a {
+    text-decoration: none;
+}
+
+.district_name {
+    font-size: 36pt;
+    font-weight: bold;
+    width: 100%;
+    text-align: center;
+}
+
+hr.district_sep {
+    width: 80%;
+    color: #333;
+    background-color: #ddd;
+    height: 5px;
+    margin: 40px auto;
 }
