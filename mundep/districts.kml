@@ -3,9 +3,6 @@
   <Document>
     <name>Избирательные округа</name>
     <Placemark>
-      <name>Округ I
-</name>
-      <styleUrl>#poly-FFEA00-801-36</styleUrl>
       <Polygon>
         <outerBoundaryIs>
           <LinearRing>
@@ -97,9 +94,6 @@
       </Polygon>
     </Placemark>
     <Placemark>
-      <name>Округ II
-</name>
-      <styleUrl>#poly-424242-901-43-nodesc</styleUrl>
       <Polygon>
         <outerBoundaryIs>
           <LinearRing>
@@ -239,9 +233,6 @@
       </Polygon>
     </Placemark>
     <Placemark>
-      <name>Округ III
-</name>
-      <styleUrl>#poly-E65100-401-51-nodesc</styleUrl>
       <Polygon>
         <outerBoundaryIs>
           <LinearRing>
