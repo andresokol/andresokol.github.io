@@ -112,8 +112,7 @@
     </StyleMap>
     <Placemark>
       <name>Округ I
-</name>
-      <description>Округ I</description>
+</name>      <description>Округ I</description>
       <styleUrl>#poly-FFEA00-801-36</styleUrl>
       <Polygon>
         <outerBoundaryIs>
