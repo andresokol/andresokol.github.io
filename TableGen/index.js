@@ -32,7 +32,7 @@ function apply_template() {
 	</div>
 </div>`);
 
-	result += '<code>' + big_result.join('<br/><br/>').replace(/>/g, "&gt;").replace(/</g, "&lt;").replace(/\n/g, '<br/>') + '</code>';
+	result += '<code>' + big_result.join('\n\n').replace(/>/g, "&gt;").replace(/</g, "&lt;").replace(/\n/g, '<br/>') + '</code>';
 
 	target.innerHTML = result;
 }
