@@ -6,7 +6,7 @@ function apply_template() {
 	var template = a.value;
 	var data_lines = b.value.split('\n');
 	var big_result = data_lines.reduce((acc, line) => {
-		var values = line.split(','); 
+		var values = line.split(/[,\t]/g); 
 		// console.log(values);
 		
 		var result = values.reduce((acc, val, i) => {
