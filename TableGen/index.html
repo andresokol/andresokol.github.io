@@ -1,0 +1,66 @@
+<style type="text/css">
+	.cnt {
+		display: flex;
+		flex-direction: row;
+		justify-content: center;
+		border-bottom: 1px solid;
+	}
+
+	.cnt>div {
+		padding: 10px;
+
+	}
+</style>
+
+
+<div style="width: 1000px; margin: 10px auto; text-align: center;">
+	<div>
+		<textarea id='data_input' style="width: 45%; resize: none; height: 400px;">abijan,1,2,3,4,5,6,7,8,9
+msk,10,20,30,40,50,60,70,80,09</textarea>
+		<textarea id='code_template' style="width: 45%; resize: none; height: 400px;"><h1>{0}</h1>
+<table>
+<tbody>
+	<tr>
+	<td width="76"></td>
+	<td style="text-align: center;" width="67">Выполнение заказа</td>
+	<td style="text-align: center;" width="81">Пропуск заказа</td>
+	<td style="text-align: center;" width="67">Отмена заказа</td>
+	<td width="57"></td>
+	<td width="57"></td>
+</tr>
+<tr>
+	<td width="76">Близкая подача</td>
+	<th style="text-align: center;" width="67">{1}</th>
+	<th style="text-align: center;" width="81">{2}</th>
+	<th style="text-align: center;" width="67">{3}</th>
+	<td width="57"></td>
+	<td width="57"></td>
+</tr>
+<tr>
+	<td width="76">Средняя подача</td>
+	<th style="text-align: center;" width="67">{4}</th>
+	<th style="text-align: center;" width="81">{5}</th>
+	<th style="text-align: center;" width="67">{6}</th>
+	<td width="57"></td>
+	<td width="57"></td>
+</tr>
+<tr>
+	<td width="76">Дальняя подача</td>
+	<th style="text-align: center;" width="67">{7}</th>
+	<th style="text-align: center;" width="81">{8}</th>
+	<th style="text-align: center;" width="67">{9}</th>
+	<td width="57"></td>
+	<td width="57"></td>
+</tr>
+</tbody>
+</table>
+</textarea>
+	</div>
+	<button onclick="apply_template()">Применить</button>
+</div>
+
+<div style="width: 800px; margin: 10px auto;" id='target'>
+
+</div>
+
+<script type="text/javascript" src="./index.js"></script>
