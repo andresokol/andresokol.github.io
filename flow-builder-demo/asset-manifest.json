@@ -1,0 +1,15 @@
+{
+  "files": {
+    "main.css": "/flow-builder-demo/static/css/main.85d7a397.css",
+    "main.js": "/flow-builder-demo/static/js/main.fd800864.js",
+    "static/js/787.e84159db.chunk.js": "/flow-builder-demo/static/js/787.e84159db.chunk.js",
+    "index.html": "/flow-builder-demo/index.html",
+    "main.85d7a397.css.map": "/flow-builder-demo/static/css/main.85d7a397.css.map",
+    "main.fd800864.js.map": "/flow-builder-demo/static/js/main.fd800864.js.map",
+    "787.e84159db.chunk.js.map": "/flow-builder-demo/static/js/787.e84159db.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.85d7a397.css",
+    "static/js/main.fd800864.js"
+  ]
+}
