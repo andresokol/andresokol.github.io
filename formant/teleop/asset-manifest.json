@@ -1,0 +1,13 @@
+{
+  "files": {
+    "main.css": "/formant/teleop/static/css/main.36316c52.css",
+    "main.js": "/formant/teleop/static/js/main.855a7549.js",
+    "index.html": "/formant/teleop/index.html",
+    "main.36316c52.css.map": "/formant/teleop/static/css/main.36316c52.css.map",
+    "main.855a7549.js.map": "/formant/teleop/static/js/main.855a7549.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.36316c52.css",
+    "static/js/main.855a7549.js"
+  ]
+}
