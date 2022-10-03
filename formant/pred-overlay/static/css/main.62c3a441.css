@@ -1,2 +1,0 @@
-body,html{margin:0;padding:0}.App{display:flex;height:100vh;width:100vw}.container-thumb{height:95vh;position:relative}.image-thumb{display:block;height:auto;width:100%}.overlay-thumb{bottom:0;height:100%;left:0;opacity:.25;position:absolute;right:0;top:0;transition:.2s ease;width:100%}.container-thumb:hover .overlay-thumb{opacity:.8}.top-left{height:100%;left:0;position:absolute;top:0;width:100%}
-/*# sourceMappingURL=main.62c3a441.css.map*/
