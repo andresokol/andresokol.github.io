@@ -1,0 +1,13 @@
+{
+  "files": {
+    "main.css": "/formant/event-list/static/css/main.fde3e85a.css",
+    "main.js": "/formant/event-list/static/js/main.389be73f.js",
+    "index.html": "/formant/event-list/index.html",
+    "main.fde3e85a.css.map": "/formant/event-list/static/css/main.fde3e85a.css.map",
+    "main.389be73f.js.map": "/formant/event-list/static/js/main.389be73f.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.fde3e85a.css",
+    "static/js/main.389be73f.js"
+  ]
+}
