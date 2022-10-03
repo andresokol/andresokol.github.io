@@ -1,13 +1,13 @@
 {
   "files": {
-    "main.css": "/formant/pred-overlay/static/css/main.2cceff08.css",
-    "main.js": "/formant/pred-overlay/static/js/main.fe7291ab.js",
+    "main.css": "/formant/pred-overlay/static/css/main.62c3a441.css",
+    "main.js": "/formant/pred-overlay/static/js/main.47ba6af3.js",
     "index.html": "/formant/pred-overlay/index.html",
-    "main.2cceff08.css.map": "/formant/pred-overlay/static/css/main.2cceff08.css.map",
-    "main.fe7291ab.js.map": "/formant/pred-overlay/static/js/main.fe7291ab.js.map"
+    "main.62c3a441.css.map": "/formant/pred-overlay/static/css/main.62c3a441.css.map",
+    "main.47ba6af3.js.map": "/formant/pred-overlay/static/js/main.47ba6af3.js.map"
   },
   "entrypoints": [
-    "static/css/main.2cceff08.css",
-    "static/js/main.fe7291ab.js"
+    "static/css/main.62c3a441.css",
+    "static/js/main.47ba6af3.js"
   ]
 }
